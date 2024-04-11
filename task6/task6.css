@@ -1,0 +1,13 @@
+body {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+h1, h2 {
+    color: navy;
+    margin-left: 20px;
+}
+
+input[type='number']{
+    width: 50px;
+}
