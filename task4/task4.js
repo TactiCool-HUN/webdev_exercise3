@@ -7,7 +7,8 @@ let products = [
 ];
 
 let prod_sel = document.getElementById("product_choice");
-let body = document.getElementById("body");
+let display_name = document.getElementById("display_name")
+let display_price = document.getElementById("display_price")
 
 products.forEach(item => {
     let prod_option = document.createElement("option");
@@ -17,10 +18,15 @@ products.forEach(item => {
     prod_sel.appendChild(prod_option);
 });
 
-selected = prod_sel.selectedIndex
-console.log(selected)
-if (selected < 0) {
-    let display = document.createElement("p");
-    display.innerText = products[0].name;
-    body.appendChild(display);
+function select_changer() {
+    let selected_option = prod_sel.selectedOptions[0]
+    let value = parseInt(selected_option.value)
+    console.log(selected_option)
+    if (value === 0) {
+        document.getElementById("display").hidden = true
+    } else {
+        document.getElementById("display").hidden = false
+        display_name.value = products[value - 1].name
+        display_price.value = products[value - 1].price.toString()
+    }
 }

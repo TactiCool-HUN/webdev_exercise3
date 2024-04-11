@@ -9,9 +9,20 @@
     <h1>Select Product</h1>
     <label for = "product_choice">Choose a product:</label>
 
-    <select name = "product_choice" id = "product_choice">
+    <select name = "product_choice" id = "product_choice" onchange = "select_changer()">
         <option value = 0>Choose Product</option>
     </select>
+
+    <form hidden id = "display">
+        <label for = "display_name">Product name:</label>
+        <input type="text" id="display_name" name="display_name">
+        <br>
+        <label for="display_price">Product price:</label>
+        <input type="text" id="display_price" name="display_price">
+        <br>
+        <input type="submit" value="Save">
+    </form>
+
     <script src = "task4.js"></script>
 </body>
 </html>
