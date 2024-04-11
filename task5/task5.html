@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Product Modification</title>
+    <link rel = "stylesheet" href = "task5.css">
+</head>
+<body id = "body">
+    <h1>Select Product</h1>
+    <h2>Match Products</h2>
+
+    <form id = "display">
+        <label for = "comparison">product price</label>
+        <select name = "comparison" id = "comparison" onchange = "changer()">
+            <option value = 0>=</option>
+            <option value = 1>></option>
+            <option value = 2><</option>
+            <option value = 3>=></option>
+            <option value = 4>=<</option>
+            <option value = 5>!=</option>
+        </select>
+        <label for="price"></label>
+        <input type="number" id="price" name="display_name" onchange="changer()" value="0">
+    </form>
+
+    <table hidden id = "results">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+        </tr>
+    </table>
+
+    <script src = "task5.js"></script>
+</body>
+</html>
