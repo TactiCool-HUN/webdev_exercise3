@@ -23,6 +23,7 @@ function changer() {
     let user_num = parseFloat(document.getElementById("price").value)
     let user_type = document.getElementById("category_select").selectedOptions[0].value
     let user_discount_check = document.getElementById("discount").checked
+    let sorter = document.getElementById("sorter").selectedOptions[0].value
     let matching = [];
 
     if (comparison === 0) {
@@ -81,6 +82,31 @@ function changer() {
             }
         })
         matching = temp
+    }
+
+    if (sorter === "name") {
+        for (let i = 0; i < matching.length; i++) {
+            for (let j = 0; j < (matching.length - i - 1); j++) {
+                if (matching[j].name > matching[j + 1].name) {
+                    let temp = matching[j]
+                    matching[j] = matching[j + 1]
+                    matching[j + 1] = temp
+                }
+            }
+        }
+    } else if (sorter === "price") {
+        matching.sort((a, b) => a.price - b.price)
+    } else if (sorter === "category") {
+        AAAAAAAAAAAAAAA
+        for (let i = 0; i < matching.length; i++) {
+            for (let j = 0; j < (matching.length - i - 1); j++) {
+                if (matching[j].name > matching[j + 1].name) {
+                    let temp = matching[j]
+                    matching[j] = matching[j + 1]
+                    matching[j + 1] = temp
+                }
+            }
+        }
     }
 
     let table = document.getElementById("results")
