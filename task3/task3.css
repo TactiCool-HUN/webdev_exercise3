@@ -1,0 +1,18 @@
+body {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+h1 {
+    color: navy;
+    margin-left: 20px;
+}
+
+table, td, th {
+    border: 1px solid;
+}
+
+tr:nth-child(odd) {
+    background-color: navy;
+    color: lightblue;
+}
