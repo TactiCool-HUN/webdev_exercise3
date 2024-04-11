@@ -71,9 +71,5 @@ function changer() {
         tr.appendChild(td_price)
         table.appendChild(tr)
     })
-    if (table.children.length === 1) {
-        table.hidden = true
-    } else {
-        table.hidden = false
-    }
+    table.hidden = table.children.length === 1;
 }
