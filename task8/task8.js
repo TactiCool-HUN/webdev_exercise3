@@ -97,10 +97,19 @@ function changer() {
     } else if (sorter === "price") {
         matching.sort((a, b) => a.price - b.price)
     } else if (sorter === "category") {
-        AAAAAAAAAAAAAAA
         for (let i = 0; i < matching.length; i++) {
             for (let j = 0; j < (matching.length - i - 1); j++) {
-                if (matching[j].name > matching[j + 1].name) {
+                if (matching[j].category > matching[j + 1].category) {
+                    let temp = matching[j]
+                    matching[j] = matching[j + 1]
+                    matching[j + 1] = temp
+                }
+            }
+        }
+    } else if (sorter === "discount") {
+        for (let i = 0; i < matching.length; i++) {
+            for (let j = 0; j < (matching.length - i - 1); j++) {
+                if (matching[j].discount > matching[j + 1].discount) {
                     let temp = matching[j]
                     matching[j] = matching[j + 1]
                     matching[j + 1] = temp
@@ -109,23 +118,53 @@ function changer() {
         }
     }
 
-    let table = document.getElementById("results")
-    while (table.children.length > 1) {
+    let table = document.getElementById("results");
+    while (table.children.length > 0) {
         table.removeChild(table.lastChild);
     }
+
+    let tr = document.createElement("tr");
+    ["id", "name", "price", "category"].forEach(item => {
+        let th = document.createElement("th");
+        th.innerText = item;
+        tr.appendChild(th);
+    });
+    if (!user_discount_check) {
+        let th = document.createElement("th")
+        th.innerText = "discount"
+        tr.appendChild(th)
+    }
+    table.appendChild(tr)
+
     matching.forEach(product => {
-        let tr = document.createElement("tr")
+        tr = document.createElement("tr")
         let td_id = document.createElement("td")
-        let td_name = document.createElement("td")
-        let td_price = document.createElement("td")
-
         td_id.innerText = product.id.toString()
-        td_name.innerText = product.name
-        td_price.innerText = product.price.toString()
-
         tr.appendChild(td_id)
+
+        let td_name = document.createElement("td")
+        td_name.innerText = product.name
         tr.appendChild(td_name)
+
+        let td_price = document.createElement("td")
+        td_price.innerText = product.price.toString()
         tr.appendChild(td_price)
+
+        let td_category = document.createElement("td")
+        td_category.innerText = product.category
+        tr.appendChild(td_category)
+
+
+        if (!user_discount_check) {
+            let td_discount = document.createElement("td")
+            if (product.discount) {
+                td_discount.innerText = "discounted"
+            } else {
+                td_discount.innerText = ""
+            }
+            tr.appendChild(td_discount)
+        }
+
         table.appendChild(tr)
     })
     table.hidden = table.children.length === 1;
