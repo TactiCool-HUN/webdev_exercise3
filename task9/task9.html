@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Modification</title>
+    <link rel="stylesheet" href="task9.css">
+</head>
+<body id="body">
+    <h1>Select Product</h1>
+    <h2>Match Products</h2>
+
+    <form id="display">
+        <label for="comparison">product price</label>
+        <select name="comparison" id="comparison" onchange="changer()">
+            <option value = 0>=</option>
+            <option value = 1>></option>
+            <option value = 2><</option>
+            <option value = 3>=></option>
+            <option value = 4>=<</option>
+            <option value = 5>!=</option>
+        </select>
+        <label for="price"></label>
+        <input type="number" id="price" name="display_name" onchange="changer()" value="0">
+        <br>
+        <label for="category_select">Product type:</label>
+        <select name="category_select" id="category_select" onchange="changer()">
+            <option value="0">Any Category</option>
+        </select>
+        <br>
+        <label for="discount">Only discounted?</label>
+        <input type="checkbox" id="discount" name="discount" onchange="changer()">
+        <br>
+        <label for="sorter">Sort by </label>
+        <select name="sorter" id="sorter" onchange="changer()">
+            <option value = "id">id</option>
+            <option value = "name">name</option>
+            <option value = "price">price</option>
+            <option value = "category">category</option>
+            <option value = "discount">discount</option>
+        </select>
+    </form>
+
+    <table hidden id = "results"></table>
+
+    <script src = "task9.js"></script>
+</body>
+</html>
