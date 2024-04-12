@@ -138,21 +138,22 @@ function changer() {
 
     matching.forEach(product => {
         tr = document.createElement("tr")
-        let td_id = document.createElement("td")
-        td_id.innerText = product.id.toString()
-        tr.appendChild(td_id)
 
-        let td_name = document.createElement("td")
-        td_name.innerText = product.name
-        tr.appendChild(td_name)
+        let td = document.createElement("td")
+        td.innerText = product.id.toString()
+        tr.appendChild(td)
 
-        let td_price = document.createElement("td")
-        td_price.innerText = product.price.toString()
-        tr.appendChild(td_price)
+        td = document.createElement("td")
+        td.innerText = product.name
+        tr.appendChild(td)
 
-        let td_category = document.createElement("td")
-        td_category.innerText = product.category
-        tr.appendChild(td_category)
+        td = document.createElement("td")
+        td.innerText = product.price.toString()
+        tr.appendChild(td)
+
+        td = document.createElement("td")
+        td.innerText = product.category
+        tr.appendChild(td)
 
 
         if (!user_discount_check) {
