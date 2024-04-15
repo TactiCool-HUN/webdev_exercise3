@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="task11.css">
+</head>
+<body>
+    <h1>Weather</h1>
+    <label for="city">City: </label>
+    <select id="city" onchange="fetchCity()">
+        <option value="0">Select City</option>
+    </select>
+    <table hidden id="results">
+        <tr>
+            <th>Temperature</th>
+            <td id="temp"></td>
+        </tr>
+        <tr>
+            <th>Humidity</th>
+            <td id="hum"></td>
+        </tr>
+        <tr>
+            <th>Wind Speed</th>
+            <td id="wind"></td>
+        </tr>
+    </table>
+    <script src="task11.js"></script>
+</body>
+</html>
