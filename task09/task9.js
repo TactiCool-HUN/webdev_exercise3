@@ -5,8 +5,8 @@ function fetchTable() {
         .then(response => response.json())
         .then(data => {
             json = data
-            drawTable()
             populateUserSelect()
+            drawTable()
         })
 }
 
@@ -38,6 +38,8 @@ function drawTable() {
     while (table.children.length > 0) {
         table.removeChild(table.lastChild);
     }
+
+
 
     let tr = document.createElement("tr");
 

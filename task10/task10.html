@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Classic-Model Employees</title>
+    <link rel="stylesheet" href="task10.css">
+</head>
+<body>
+    <h1>Employees</h1>
+    <form>
+        <label for="search">Search: </label>
+        <input type="text" id="search" onchange="drawTable()">
+        <label for="title">Job Title: </label>
+        <select id="title" onchange="drawTable()">
+            <option value="0">Any</option>
+        </select>
+    </form>
+    <table id="results">
+        <tr>
+            <th>email</th>
+            <th>employee number</th>
+            <th>extension</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>job title</th>
+            <th>office code</th>
+            <th>reports to</th>
+        </tr>
+    </table>
+    <script src="task10.js"></script>
+</body>
+</html>
