@@ -1,12 +1,12 @@
 let json = {}
-let api_key = ""
+let api_key = "5d0dfcd2ad48cc25dd841d1b352525b5"
 
 function fetchCity() {
     let city = document.getElementById("city").selectedOptions[0].value;
     let table = document.getElementById("results")
     if (city !== "0") {
         table.hidden = false
-        fetch("http://api.openweathermap.org/data/2.5/weather?q=$" + city + "&APPID=$" + api_key)
+        fetch("http://api.openweathermap.org/data/2.5/weather?q=" + city + "&APPID=" + api_key)
             .then(response => response.json())
             .then(data => {
                 json = data
@@ -22,7 +22,9 @@ function drawTable() {
     let hum = document.getElementById("hum")
     let wind = document.getElementById("wind")
 
-    console.log(json)
+    temp.innerText = Math.round(json.main.temp - 273.15)
+    hum.innerText = json.main.humidity
+    wind.innerText = json.wind.speed
 }
 
 let cities_select = document.getElementById("city");
