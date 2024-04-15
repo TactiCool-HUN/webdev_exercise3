@@ -1,5 +1,5 @@
 let json = {}
-let api_key = "5d0dfcd2ad48cc25dd841d1b352525b5"
+let api_key = ""
 
 function fetchCity() {
     let city = document.getElementById("city").selectedOptions[0].value;
