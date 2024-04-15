@@ -1,0 +1,18 @@
+body {
+    background-color: lightblue;
+    color: darkblue;
+}
+
+h1, h2 {
+    color: navy;
+    margin-left: 20px;
+}
+
+input[type='number']{
+    width: 50px;
+}
+
+table, td, th {
+    padding: 2px;
+    border: 1px solid;
+}
